@@ -5,7 +5,6 @@ from sklearn.cluster import KMeans
 import argparse
 
 # Configuration
-# test
 SAMPLE_RATE = 16000
 N_MFCC = 13
 N_CLUSTERS = 3  # Assuming 3 accents for demo
