@@ -2,6 +2,8 @@
 
 This project is a proof-of-concept AI agent that filters and categorizes spoken audio based on **accent**. It's built as part of a technical challenge for REM Waste's AI Engineer role.
 
+Website used to download audio files for testing and training: https://commonvoice.mozilla.org/en/datasets
+
 ## 🚀 What It Does
 
 - Accepts audio input (WAV/MP3)
