@@ -1,0 +1,16 @@
+accent-ai-agent/
+├── README.md
+├── requirements.txt
+├── app/
+│   ├── main.py              # Entry point
+│   ├── pipeline.py          # Core logic: preprocessing, inference, etc.
+│   ├── model.py             # Loads model or handles clustering
+│   ├── utils.py             # Audio utilities (load, convert, etc.)
+│   └── config.py            # Paths, settings, constants
+├── data/
+│   ├── samples/             # Few sample audio clips (different accents)
+│   └── processed/           # Extracted features, embeddings, etc.
+├── models/
+│   └── wav2vec2/            # Saved model/checkpoints
+└── notebooks/
+    └── eda.ipynb            # Jupyter notebook for exploring embeddings
