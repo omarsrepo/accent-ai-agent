@@ -23,7 +23,7 @@ This project is a proof-of-concept AI agent that filters and categorizes spoken 
 ## 🧪 Quickstart
 
 ```bash
-git clone https://github.com/yourusername/accent-ai-agent.git
+git clone https://github.com/omarsrepo/accent-ai-agent.git
 cd accent-ai-agent
 pip install -r requirements.txt
 python app/main.py --input data/samples/test1.wav
