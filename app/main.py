@@ -69,5 +69,5 @@ def main():
     print(f"→ Predicted Accent Cluster: {accent_label}")
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':   
     main()
