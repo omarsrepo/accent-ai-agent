@@ -14,7 +14,9 @@ def extract_features(audio_path):
     """Extract MFCCs from an audio file."""
     y, sr = librosa.load(audio_path, sr=SAMPLE_RATE)
     mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=N_MFCC)
-    return np.mean(mfcc.T, axis=0)  # Average over time
+    mfcc_mean = np.mean(mfcc.T, axis=0)
+    return mfcc_mean.astype('float64')  # Cast to float64 for sklearn compatibility
+
 
 
 def load_audio_features(audio_dir):
@@ -53,6 +55,14 @@ def main():
     features, _ = load_audio_features(args.train_dir)
     print("[+] Clustering accents...")
     kmeans = KMeans(n_clusters=N_CLUSTERS, random_state=42).fit(features)
+
+    print("[+] Training sample cluster assignments:")
+    for filename in os.listdir(args.train_dir):
+        if filename.endswith(".wav") or filename.endswith(".mp3"):
+            path = os.path.join(args.train_dir, filename)
+            feat = extract_features(path).reshape(1, -1)
+            cluster = kmeans.predict(feat)[0]
+            print(f"{filename} --> Cluster {cluster}")
 
     print(f"[+] Predicting accent for: {args.input}")
     accent_label = predict_accent(args.input, kmeans)
