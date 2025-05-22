@@ -6,6 +6,7 @@ Website used to download audio files for testing and training: https://commonvoi
 
 ## 🚀 What It Does
 
+- Accepts a url to a video and extracts the audio 
 - Accepts audio input (WAV/MP3)
 - Preprocesses and normalizes the audio
 - Extracts audio embeddings using a **pretrained Wav2Vec2** model (from HuggingFace)

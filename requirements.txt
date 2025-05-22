@@ -1,0 +1,9 @@
+librosa
+numpy
+pandas
+scikit-learn
+matplotlib
+joblib
+tqdm
+moviepy==1.0.3
+argparse; python_version < '3.10'
