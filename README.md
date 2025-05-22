@@ -23,4 +23,60 @@ Built with:
 ---
 
 ## 📁 Project Structure
+accent-ai-agent/
+│
+├── app/
+│ └── app.py # Streamlit UI
+│
+├── data/
+│ └── samples/ # Training audio files
+│
+├── downloads/ # Temporary folder for YouTube MP3s
+├── audio/ # Temporary folder for uploaded MP3s
+│
+├── accent_kmeans_model.joblib # Saved KMeans model
+├── accent_cluster_reference.csv# Reference of cluster assignments
+│
+├── train.py # CLI training script
+├── test.py # CLI testing script
+├── requirements.txt
+└── README.md
+
+
+## How to use this app
+## 🚀 Quick Start
+
+### 1. Clone the repo
+
+```
+bash
+git clone https://github.com/YOUR_USERNAME/accent-ai-agent.git
+cd accent-ai-agent
+```
+
+### 2. Setup your environment
+python -m venv .venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+pip install -r requirements.txt
+
+### 3. 🌐 Run the Web App (Streamlit)
+streamlit run app/app.py
+
+
+## 🧠 Training Your Own Model
+Place your .mp3 or .wav files in data/samples/
+Run the trainer using the CLI command: python train.py --n_clusters 8
+This generates:
+accent_kmeans_model.joblib – the trained model
+accent_cluster_reference.csv – cluster assignments for training files
+
+## 🔍 Test From Command Line
+python test.py --test_file path/to/test_audio.mp3
+
+The script:
+Loads the trained model
+Extracts features from your test audio
+Predicts the cluster
+Displays similar audio samples from the training set
+
 
