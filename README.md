@@ -23,6 +23,7 @@ Built with:
 ---
 
 ## 📁 Project Structure
+```
 accent-ai-agent/
 │
 ├── app/
@@ -41,6 +42,7 @@ accent-ai-agent/
 ├── test.py # CLI testing script
 ├── requirements.txt
 └── README.md
+```
 
 
 ## How to use this app
