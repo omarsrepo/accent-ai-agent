@@ -27,19 +27,19 @@ Built with:
 accent-ai-agent/
 │
 ├── app/
-│ └── app.py # Streamlit UI
+│   └── app.py                   # Streamlit UI
+|   └── test_model.py            # CLI model testing script
+|   └── train_model.py           # CLI model training script
 │
 ├── data/
-│ └── samples/ # Training audio files
+│   └── samples/                 # Training audio files
 │
-├── downloads/ # Temporary folder for YouTube MP3s
-├── audio/ # Temporary folder for uploaded MP3s
+├── downloads/                   # Temporary folder for YouTube MP3s
+├── audio/                       # Temporary folder for uploaded MP3s
 │
-├── accent_kmeans_model.joblib # Saved KMeans model
-├── accent_cluster_reference.csv# Reference of cluster assignments
+├── accent_kmeans_model.joblib   # Saved trained KMeans model
+├── accent_cluster_reference.csv # Reference of cluster assignments
 │
-├── train.py # CLI training script
-├── test.py # CLI testing script
 ├── requirements.txt
 └── README.md
 ```
@@ -70,7 +70,7 @@ streamlit run app/app.py
 Place your .mp3 or .wav files in data/samples/
 Run the trainer using the CLI command
 ```
-python train.py --n_clusters 8
+python app/train_model.py --n_clusters 8
 ```
 This generates:
 accent_kmeans_model.joblib – the trained model
@@ -78,7 +78,7 @@ accent_cluster_reference.csv – cluster assignments for training files
 
 ## 🔍 Test From Command Line
 ```
-python test.py --test_file path/to/test_audio.mp3
+python app/test_model.py --test_file path/to/test_audio.mp3
 ```
 The script:
 Loads the trained model
