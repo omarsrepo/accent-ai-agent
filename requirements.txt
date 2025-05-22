@@ -7,4 +7,6 @@ joblib
 tqdm
 moviepy==1.0.3
 yt-dlp
+datasets
+streamlit
 argparse; python_version < '3.10'
