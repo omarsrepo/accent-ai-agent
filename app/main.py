@@ -18,5 +18,6 @@ available_files = set(os.listdir(audio_folder))
 final_df = accent_df[accent_df["path"].isin(available_files)]
 print(f"Rows with matching audio files: {len(final_df)}")
 
-# Save final output
-final_df.to_csv("filtered_train.csv", index=False)
+# We get a csv file with accents column populated and only contains rows for audio files we have readily available
+final_df.to_csv("filtered_train.csv", index=False) 
+
