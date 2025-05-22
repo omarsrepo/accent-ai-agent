@@ -1,32 +1,26 @@
-# Accent Classification AI Agent 🎙️🌍
+# 🎙️ Accent Classifier – KMeans-Based Clustering Tool for English Accents
 
-This project is a proof-of-concept AI agent that filters and categorizes spoken audio based on **accent**. It's built as part of a technical challenge for REM Waste's AI Engineer role.
+This project is an attempted solution to **analyze and classify English-speaking accents** from audio input using **MFCC-based feature extraction and KMeans clustering**. It supports both uploaded `.mp3`/`.wav` files and direct links to **YouTube videos**.
 
-Website used to download audio files for testing and training: https://commonvoice.mozilla.org/en/datasets
+Built with:
+- 🧠 `scikit-learn` for clustering  
+- 🎧 `librosa` for audio processing  
+- 🌐 `Streamlit` for an interactive web UI  
+- 🎥 `yt-dlp` for YouTube audio extraction  
 
-## 🚀 What It Does
+---
 
-- Accepts a url to a video and extracts the audio 
-- Accepts audio input (WAV/MP3)
-- Preprocesses and normalizes the audio
-- Extracts audio embeddings using a **pretrained Wav2Vec2** model (from HuggingFace)
-- Clusters the embeddings to infer likely accent groups
-- Outputs the most probable accent category
+## 🛠️ Features
 
-> 🎯 This is not a production classifier, but a demo of real-world AI engineering using modern audio ML tools.
+- Upload an audio file **(MP3/WAV)** or paste a **YouTube link**
+- Auto-downloads and extracts audio using `yt-dlp`
+- Extracts **MFCC features** for accent analysis
+- Predicts the speaker’s **accent cluster** using a pre-trained KMeans model
+- Displays **similar samples** from the same cluster
+- CLI tools for training and testing models
+- Streamlit app for global access and demo
 
-## 🛠️ Tech Stack
+---
 
-- Python 3.10
-- Hugging Face Transformers (`Wav2Vec2`)
-- Librosa + Torchaudio
-- Scikit-learn (for clustering/classification)
-- Flask (optional: minimal API wrapper for testing)
+## 📁 Project Structure
 
-## 🧪 Quickstart
-
-```bash
-git clone https://github.com/omarsrepo/accent-ai-agent.git
-cd accent-ai-agent
-pip install -r requirements.txt
-python app/main.py --input data/samples/test1.wav
