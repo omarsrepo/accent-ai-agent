@@ -7,6 +7,8 @@ import numpy as np
 from joblib import load
 import subprocess
 from pathlib import Path
+import yt_dlp
+
 
 # === Configuration ===
 SAMPLE_RATE = 16000
