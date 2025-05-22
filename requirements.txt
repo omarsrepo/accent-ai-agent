@@ -6,4 +6,5 @@ matplotlib
 joblib
 tqdm
 moviepy==1.0.3
+yt-dlp
 argparse; python_version < '3.10'
