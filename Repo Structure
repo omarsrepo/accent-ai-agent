@@ -1,16 +1,18 @@
 accent-ai-agent/
-├── README.md
-├── requirements.txt
+│
 ├── app/
-│   ├── main.py              # Entry point
-│   ├── pipeline.py          # Core logic: preprocessing, inference, etc.
-│   ├── model.py             # Loads model or handles clustering
-│   ├── utils.py             # Audio utilities (load, convert, etc.)
-│   └── config.py            # Paths, settings, constants
+│   └── app.py                   # Streamlit UI
+|   └── test_model.py            # CLI model testing script
+|   └── train_model.py           # CLI model training script
+│
 ├── data/
-│   ├── samples/             # Few sample audio clips (different accents)
-│   └── processed/           # Extracted features, embeddings, etc.
-├── models/
-│   └── wav2vec2/            # Saved model/checkpoints
-└── notebooks/
-    └── eda.ipynb            # Jupyter notebook for exploring embeddings
+│   └── samples/                 # Training audio files
+│
+├── downloads/                   # Temporary folder for YouTube MP3s
+├── audio/                       # Temporary folder for uploaded MP3s
+│
+├── accent_kmeans_model.joblib   # Saved trained KMeans model
+├── accent_cluster_reference.csv # Reference of cluster assignments
+│
+├── requirements.txt
+└── README.md
