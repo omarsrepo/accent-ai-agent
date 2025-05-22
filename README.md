@@ -44,9 +44,7 @@ accent-ai-agent/
 └── README.md
 ```
 
-
-## How to use this app
-## 🚀 Quick Start
+## 🚀 Quick Start - How to use this app
 
 ### 1. Clone the repo
 
@@ -57,24 +55,31 @@ cd accent-ai-agent
 ```
 
 ### 2. Setup your environment
+```
 python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
+```
 
 ### 3. 🌐 Run the Web App (Streamlit)
+```
 streamlit run app/app.py
-
+```
 
 ## 🧠 Training Your Own Model
 Place your .mp3 or .wav files in data/samples/
-Run the trainer using the CLI command: python train.py --n_clusters 8
+Run the trainer using the CLI command
+```
+python train.py --n_clusters 8
+```
 This generates:
 accent_kmeans_model.joblib – the trained model
 accent_cluster_reference.csv – cluster assignments for training files
 
 ## 🔍 Test From Command Line
+```
 python test.py --test_file path/to/test_audio.mp3
-
+```
 The script:
 Loads the trained model
 Extracts features from your test audio
