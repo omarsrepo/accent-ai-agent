@@ -72,9 +72,10 @@ Run the trainer using the CLI command
 ```
 python app/train_model.py --n_clusters 8
 ```
-This generates:
-accent_kmeans_model.joblib – the trained model
+This generates:  
+accent_kmeans_model.joblib – the trained model  
 accent_cluster_reference.csv – cluster assignments for training files
+
 
 ## 🔍 Test From Command Line
 ```
