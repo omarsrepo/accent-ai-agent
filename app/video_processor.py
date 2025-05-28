@@ -493,10 +493,10 @@ if __name__ == "__main__":
     ydl_opts = {
         'format': 'm4a/bestaudio/best',
         'postprocessors': [{
-        'key': 'FFmpegExtractAudio',
-        'preferredcodec': 'wav',  # <--- WAV format here
-        'preferredquality': '192',  # optional for lossy formats, ignored for WAV
-    }]
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'wav',  # <--- WAV format here
+            'preferredquality': '192',  # optional for lossy formats, ignored for WAV
+        }]
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
