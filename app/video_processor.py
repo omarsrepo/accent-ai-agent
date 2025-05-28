@@ -21,21 +21,13 @@ logger = logging.getLogger(__name__)
 class VideoProcessor:
     """Class to handle video URL input and audio extraction using proxy services."""
     
-    def __init__(self, output_dir=None):
+    def __init__(self):
         """
         Initialize the VideoProcessor.
-        
-        Args:
-            output_dir (str, optional): Directory to save extracted audio files.
-                                       If None, a temporary directory will be used.
+        Creates a temporary directory to save extracted audio files to and logs it.
         """
-        if output_dir:
-            self.output_dir = Path(output_dir)
-            os.makedirs(self.output_dir, exist_ok=True)
-        else:
-            self.temp_dir = tempfile.TemporaryDirectory()
-            self.output_dir = Path(self.temp_dir.name)
-        
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.output_dir = Path(self.temp_dir.name)
         logger.info(f"Output directory set to: {self.output_dir}")
     
     def __del__(self):
@@ -111,7 +103,7 @@ class VideoProcessor:
         
         # First attempt: Try standard yt-dlp download
         try:
-            logger.info("Attempting standard download")
+            logger.info("Attempting standard download using yt-dlp")
             ydl_opts = {
                 'format': 'bestaudio[ext=m4a]/best[ext=mp4]/best',
                 'outtmpl': str(output_path),
@@ -489,3 +481,10 @@ if __name__ == "__main__":
         print(f"Audio extracted to: {audio_file}")
     except Exception as e:
         print(f"Error: {str(e)}")
+
+    # temp_dir = tempfile.TemporaryDirectory()
+    # output_dir = Path(temp_dir.name)
+    # output_path = output_dir / "video.mp4"
+    # print(output_dir)
+    # print(output_path)
+   

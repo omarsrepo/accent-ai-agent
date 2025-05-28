@@ -10,3 +10,4 @@ yt-dlp
 datasets
 streamlit
 argparse; python_version < '3.10'
+ffmpeg-python # for video_processor.py
