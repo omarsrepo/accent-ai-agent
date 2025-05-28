@@ -475,9 +475,23 @@ class VideoProcessor:
 # Example usage
 if __name__ == "__main__":
     # Test with a sample video URL
-    processor = VideoProcessor()
-    try:
-        audio_file = processor.extract_audio_from_url("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-        print(f"Audio extracted to: {audio_file}")
-    except Exception as e:
-        print(f"Error: {str(e)}")
+    # processor = VideoProcessor()
+    # try:
+    #     audio_file = processor.extract_audio_from_url("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    #     print(f"Audio extracted to: {audio_file}")
+    # except Exception as e:
+    #     print(f"Error: {str(e)}")
+
+    URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    
+    ydl_opts = {
+        'format': 'm4a/bestaudio/best', # Order of preferred audio formats
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'wav',  # <--- Can be changed to any format (Check online for accepted formats)
+            'preferredquality': '192',  # optional for lossy formats, ignored for WAV
+        }]
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+	    ydl.download(URL)
