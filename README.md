@@ -1,6 +1,6 @@
 # 🎙️ Accent Classifier – KMeans-Based Clustering Tool for English Accents
 
-This project is an attempted solution to **analyze and classify English-speaking accents** from audio input using **MFCC-based feature extraction and KMeans clustering**. It supports both uploaded `.mp3`/`.wav` files and direct links to **YouTube videos**.  
+Analyze and classify English-speaking accents from audio input using pre-trained machine learning models from huggingface and proxy methods to download audio source (video URL). It supports both uploaded `.mp3`/`.wav` files and direct links to **YouTube videos**.  
 
 The model currently classifies accents of a provided mp3 file by clustering it into a specified number of clusters. The model was trained on a small sample size of 20 english audio files with 5 different accents across them. It is just meant to simulate supervised learning as I could not obtain mp3 files along with tsv/xlsx files that contained metadata about each mp3 file to train the model on a better method such as SVM, RandomForest or Neural Networks, which i believe would improve the accuracy and reliability of this application much more. This is just meant to be a proof of concept.  
 The streamlit app is simple to use as you simply provide a url to a video, the audio file will be extracted and then placed into a cluster. You will also be shown some similar audio files that belong to the assigned cluster to give you an idea of which accent it was clustered along with. This might not be accurate but once again, its just a proof of concept!
